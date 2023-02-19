@@ -1,0 +1,8 @@
+<ng-container *ngIf="sessionStarted()" class="nav-container">
+  <app-header></app-header>
+  <app-sidenav></app-sidenav>
+</ng-container>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

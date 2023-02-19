@@ -1,0 +1,28 @@
+<ng-container *ngIf="!app.sessionStarted(); else loggedIn" class="nav-container">
+    {{app.loginRoute()}}
+</ng-container>
+
+<ng-template #loggedIn>
+    <body>
+        <div class="area" >
+                <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center w-100 h-100"></div>
+
+        <div class="homeBody">
+            <h1>Collections</h1>
+        </div>
+    </body>
+</ng-template>

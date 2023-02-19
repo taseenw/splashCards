@@ -1,0 +1,33 @@
+nav {
+    position: absolute;
+    top: 56%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+
+    height: 760px;
+    width: 13%;
+    background-color: #333333;
+}
+
+.addButton {
+    /* cool bootstrap button */
+    background-color: #333333;
+    border: 2px solid #333333;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 15px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.addButton:hover {
+    background-color: #858585;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}

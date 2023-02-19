@@ -1,0 +1,52 @@
+<ng-container *ngIf="!app.sessionStarted(); else loggedIn" class="nav-container">
+    <body>
+        <div class="context">
+            <h1>Splash Cards</h1>
+        </div>
+
+        <div class="area" >
+                <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center w-100 h-100"></div>
+
+        <div class = "loginWidget">
+            <div class="loginHeader">
+                <h1>Welcome 👋</h1>
+            </div>
+            <form #login="ngForm" (ngSubmit)="onSubmit(email, password)">
+                <div class="form-group">
+                    <input required ngModel email name="email" #email="ngModel" id="email" type="email" class="form-control" placeholder="Email">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <input required ngModel name="password" #password="ngModel" id="password" type="password" class="form-control" placeholder="Password">
+                </div>
+
+                <br>
+
+                <button type="submit" [disabled]="!(email.valid && password.valid)">Sign In</button>
+                <div class="registerLink">
+                    <a routerLink="/register">Don't have an account? Register here.</a>
+                </div> 
+            </form>
+        </div>
+    </body>
+</ng-container>
+
+<ng-template #loggedIn>
+    {{app.homeRoute()}}
+</ng-template>

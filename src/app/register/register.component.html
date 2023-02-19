@@ -1,0 +1,65 @@
+<ng-container *ngIf="!app.sessionStarted(); else loggedIn" class="nav-container">
+    <body>
+        <div class="context">
+            <h1>Splash Cards</h1>
+        </div>
+
+        <div class="area" >
+                <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center w-100 h-100"></div>
+
+        <div class = "registerWidget">
+            <div class="registerHeader">
+                <h1>Register 📝</h1>
+            </div>
+
+            <form #register="ngForm" (ngSubmit)="onSubmit(email, password)">
+                <div class="form-group">
+                    <input required ngModel email name="fullName" #fullName="ngModel" id="fullName" type="text" class="form-control" placeholder="Full Name">
+                </div>
+                
+                <br>
+
+                <div class="form-group">
+                    <input required ngModel email name="email" #email="ngModel" id="email" type="email" class="form-control" placeholder="Email">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <input required ngModel name="password" #password="ngModel" id="password" type="password" class="form-control" placeholder="Password">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <input required ngModel name="confirmPassword" #confirmPassword="ngModel" id="confirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                </div>
+
+                <br>
+
+                <button type="submit" [disabled]="!(fullName.valid && email.valid && password.valid && (confirmPassword.value == password.value))">Register</button>
+                <div class="loginLink">
+                    <a routerLink="/login">Sign Up</a>
+                </div> 
+            </form>
+        </div>
+    </body>
+</ng-container>
+
+<ng-template #loggedIn>
+    {{app.homeRoute()}}
+</ng-template>
